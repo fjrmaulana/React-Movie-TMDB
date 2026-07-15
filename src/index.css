@@ -1,0 +1,19 @@
+
+
+.brand-logo {
+  font-size: 1.5rem; /* Ukuran default di laptop/desktop */
+  display: inline-block;
+}
+
+/* Untuk layar HP dengan lebar maksimal 576px */
+@media (max-width: 576px) {
+  .brand-text {
+    display: none !important; /* Menyembunyikan teks di layar mobile */
+  }
+   .brand-logo {
+    font-size: 2.2rem; /* Memperbesar ukuran logo emoji saat di mobile */
+    /* Jika menggunakan tag <img> gunakan code di bawah ini: */
+    /* width: 45px; */
+    /* height: auto; */
+  }
+}
