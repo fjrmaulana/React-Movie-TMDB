@@ -27,20 +27,42 @@ export const getpopularMovies = async () => {
   return response.data.results;
 };
 
-// export const getTrendingMovies = async (): Promise<TMDBResponse> => {
-//   const response = await movieApi.get('/movie/popular');
-//   console.log('response',response);
-//   return response.data;
-// };
+export const searcPopularMovies = async (query) => {
+  const response = await movieApi.get(`${BASE_URL}/search/movie?query=${query}`,{
+     headers: {
+        'accept': 'application/json',
+        'Authorization': `Bearer ${TOKEN}` 
+      }
+  });
+  return response.data.results;
+};
 
-// export const getTopRatedMovies = async (): Promise<TMDBResponse> => {
-//   const response = await movieApi.get('/movie/top_rated');
-//   return response.data;
-// };
+export const getTopRatedMovies = async () => {
+  const response = await movieApi.get(`${BASE_URL}/movie/top_rated`,{
+     headers: {
+        'accept': 'application/json',
+        'Authorization': `Bearer ${TOKEN}` 
+      }
+  });
+  return response.data.results;
+};
 
-// export const searchMovies = async (query: string): Promise<TMDBResponse> => {
-//   const response = await movieApi.get('/search/movie', {
-//     params: { query },
-//   });
-//   return response.data;
-// };
+export const getNowPlayingMovies = async () => {
+  const response = await movieApi.get(`${BASE_URL}/movie/now_playing`,{
+     headers: {
+        'accept': 'application/json',
+        'Authorization': `Bearer ${TOKEN}` 
+      }
+  });
+  return response.data.results;
+};
+
+export const getUpCommingMovies = async () => {
+  const response = await movieApi.get(`${BASE_URL}/movie/upcoming`,{
+     headers: {
+        'accept': 'application/json',
+        'Authorization': `Bearer ${TOKEN}` 
+      }
+  });
+  return response.data.results;
+};
